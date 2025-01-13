@@ -1,0 +1,7 @@
+{
+  "name": "FretLearner",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
