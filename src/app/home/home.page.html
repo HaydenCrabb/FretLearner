@@ -2,27 +2,33 @@
   <div id="container">
     <h1 class="title">Fret Learner</h1>
     <div class="note-container">
-      <div class="letter string" [ngClass]="{'drop-fade-out': animate}">
-        {{ this.string }}
+      <div class="letter string" [ngClass]="{'drop-fade-out': animate}" *ngIf="animate">
+        {{ oldString }}
       </div>
-      <div class="letter note" [ngClass]="{'drop-fade-out': animate}">
-        {{ this.note }}
+      <div class="letter note" [ngClass]="{'drop-fade-out': animate}" *ngIf="animate">
+        {{ oldNote }}
       </div>
-  </div>
-  <div class="start-button-container">
-    <div class="start-button" *ngIf="!this.playing" (click)="this.start()">
-      Start Training
+      <div class="letter string" *ngIf="string">
+        {{ string }}
+      </div>
+      <div class="letter note" *ngIf="note">
+        {{ note }}
+      </div>
     </div>
-    <div class="stop-button" *ngIf="this.playing" (click)="this.stop()">
-      Stop Training
+    <div class="start-button-container">
+      <div class="start-button" *ngIf="!this.playing" (click)="this.start()">
+        Start Training
+      </div>
+      <div class="stop-button" *ngIf="this.playing" (click)="this.stop()">
+        Stop Training
+      </div>
+    </div>
+    <div class="settings-container" *ngIf="!this.playing">
+      <p>How many seconds between note changes?</p>
+      <ion-range [pin]="true" [snaps]="true" [min]="1" [value]="this.seconds" [max]="30" aria-label="Timing" (ionChange)="rangeChange($event)">
+        <ion-icon name="musical-note-outline"></ion-icon>
+        <ion-icon name="musical-notes-outline"></ion-icon>
+      </ion-range>
     </div>
   </div>
-  <div class="settings-container" *ngIf="!this.playing">
-    <p>How many seconds between note changes?</p>
-    <ion-range [pin]="true" [snaps]="true" [min]="1" [value]="this.seconds" [max]="30" aria-label="Timing" (ionChange)="rangeChange($event)">
-      <ion-icon name="musical-note-outline"></ion-icon>
-      <ion-icon name="musical-notes-outline"></ion-icon>
-    </ion-range>
-  </div>
-</div>
 </ion-content>

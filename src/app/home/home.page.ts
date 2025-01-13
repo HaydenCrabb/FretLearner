@@ -10,6 +10,8 @@ import { IonRange, RangeCustomEvent } from '@ionic/angular';
 export class HomePage {
   note: String = "";
   string: String = "";
+  oldNote: String = "";
+  oldString: String = "";
   playing: Boolean = false;
   seconds: number = 15;
   interval: any;
@@ -28,10 +30,14 @@ export class HomePage {
     clearInterval(this.interval);
     this.note = "";
     this.string = "";
+    this.oldNote = "";
+    this.oldString = "";
   }
 
   switchNote() {
     this.animate = true; // Trigger animation
+    this.oldString = this.string;
+    this.oldNote = this.note;
 
     setTimeout(() => {
       const possible_strings = ["1st", "2nd", "3rd", "4th", "5th", "6th"];
