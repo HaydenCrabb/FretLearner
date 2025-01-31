@@ -1,0 +1,17 @@
+<ion-content [fullscreen]="true" id="background">
+   <div id="container">
+    <header page="settings"></header>
+    <div class="settings-container-outer">
+      <div class="settings-container">
+        <p>How many seconds between note changes?</p>
+        <ion-range [pin]="true" [snaps]="true" [min]="1" [value]="this.seconds" [max]="30" aria-label="Timing" (ionChange)="rangeChange($event)">
+          <ion-icon name="musical-note-outline"></ion-icon>
+          <ion-icon name="musical-notes-outline"></ion-icon>
+        </ion-range>
+        <ion-toggle [checked]="this.settings.flats" (ionChange)="this.settings.toggleFlats()">Include Flats?</ion-toggle><br>
+        <ion-toggle [checked]="this.settings.sharps" (ionChange)="this.settings.toggleSharps()">Include Sharps?</ion-toggle><br>
+        <ion-toggle [checked]="this.settings.visual_note" (ionChange)="this.settings.toggleVisual()">Include Visual Guide?</ion-toggle><br>
+      </div>
+    </div>
+  </div>
+</ion-content>

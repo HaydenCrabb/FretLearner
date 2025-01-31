@@ -1,2 +1,18 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+#background {
+  --background: url('../assets/background-leather.png');
+  --background-size: contain;
+}
+#background-content::after{
+  --background-color: #000;
+  --width: 100%;
+  --height: 100%;
+  --opacity: 0.8;
+}
+#container {
+  color: #F4EEDC;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2em;
+  padding-right: 2em;
+}

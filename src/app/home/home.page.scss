@@ -1,10 +1,16 @@
-#container {
-  max-width: 60rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2em;
-  padding-right: 2em;
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.settings-button {
+  padding: 0.75em;
+  background-image: linear-gradient(#FDFAF0,#F4EEDC 80%, #CCC6B4);
+  border-radius: 0.5em;
+  color: #353535;
+}
+
 
 .note-container {
   height: 30vh;
@@ -12,6 +18,25 @@
   justify-content: space-around;
   margin-bottom: 2em;
   margin-top: 2em;
+  align-items: center;
+  position: relative;
+  
+}
+.note-container .outer-box {
+  width: 80%;
+  height: 100%;
+  background-color: #F4EEDC;
+  padding: 0.5em;
+  border-radius: 1em;
+}
+
+.note-container .inner-box {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg,#000,#1C1C1C 75%,#000);
+  border-radius: 1em;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   position: relative;
 }
@@ -27,14 +52,15 @@
 }
 
 .string {
-  padding-right: 2em;
+  padding-right: 3em;
 }
 .note {
-  padding-left: 2em;
+  padding-left: 3em;
 }
 
 .drop-fade-out {
   animation: dropFadeOut 0.5s forwards;
+  color: gray !important;
 }
 
 @keyframes dropFadeOut {
@@ -44,7 +70,7 @@
   }
   100% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
   }
 }
 
@@ -52,22 +78,28 @@
 .start-button-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 3em;
+}
+.start-button-outer {
+  background-color: #353535;
+  border-radius: 1em;
+  padding: 0.25em;
 }
 .start-button {
   padding: 2em;
   display: inline-block;
-  background-color: blue;
+  background-image: linear-gradient(#FDFAF0,#F4EEDC 80%, #CCC6B4);
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   border-radius: 1em;
-  color: white;
+  color: #353535;
 }
 
 .stop-button {
   padding: 2em;
   display: inline-block;
-  background-color: gray;
+  background-image: linear-gradient(#5C5C5C,#444);
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -75,6 +107,26 @@
   color: white;
 }
 
-.start-button-container {
-  margin-bottom: 5em;
+.fret-board-container {
+  position: relative;
 }
+
+#marker {
+  position: absolute;
+  height: 15%;
+  aspect-ratio: 1 / 1;
+  background-image: linear-gradient(45deg,#EF3333,#FF6969);
+  box-shadow: -4px 2px 5px #222;
+  border-radius: 20px;
+}
+
+#fret-board {
+  border-radius: 0.3em;
+}
+
+/* 
+
+Left Values: Fret 1: 5% Fret 2  13% Fret 3  21%  Fret 4  29% Fret 5 36.5% Fret 6 45% Fret 7 52% Fret 8 60% Fret 9 68% Fret 10 76%  Fret 11 84%
+Top Values: String 1: 0, String 2: 14.5%, String 3: 29.5%, String 4: 44.5%, String 5: 59.5%, String 6: 74.5%
+
+*/
