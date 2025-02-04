@@ -1,6 +1,12 @@
 <ion-content [fullscreen]="true" id="background">
    <div id="container">
-    <header-bar page="settings"></header-bar>
+    <!-- Header Bar -->
+    <div class="title-container">
+      <div class="space-filler"></div>
+      <h1 class="title">Fret Learner</h1>
+      <div class="settings-button" (click)="move()">Start Playing</div>
+    </div>
+    <!-- End header bar -->
     <div class="settings-container-outer">
       <div class="settings-container">
         <p>How many seconds between note changes?</p>

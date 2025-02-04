@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { SettingsPageRoutingModule } from './settings-routing.module';
 
 import { SettingsPage } from './settings.page';
-import { SharedModule } from '../components/shared/shared.module';
 
 @NgModule({
   imports: [
@@ -15,7 +14,6 @@ import { SharedModule } from '../components/shared/shared.module';
     FormsModule,
     IonicModule,
     SettingsPageRoutingModule,
-    SharedModule,
   ],
   declarations: [SettingsPage]
 })

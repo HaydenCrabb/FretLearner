@@ -1,7 +1,12 @@
 <ion-content [fullscreen]="true" id="background">
     <div id="container" (window:keypress)="onKeyUp($event)">
       <!-- Insert Header Component Here -->
-      <header-bar page="play"></header-bar>
+      <div class="title-container">
+        <div class="space-filler"></div>
+        <h1 class="title">Fret Learner</h1>
+        <div class="settings-button" [routerLink]="['/settings']">Settings</div>
+      </div>
+      <!-- End Header Component -->
       <div class="note-container">
         <div class="outer-box">
           <div class="inner-box">
